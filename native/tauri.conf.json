@@ -1,0 +1,48 @@
+{
+  "productName": "Thermy9",
+  "version": "1.0.1",
+  "identifier": "com.thermy9.studio",
+  "build": {
+    "frontendDist": "../web"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "Thermy9 · Label Studio",
+        "width": 1500,
+        "height": 960,
+        "minWidth": 850,
+        "minHeight": 650,
+        "dragDropEnabled": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "icon": [
+      "icons/icon.ico"
+    ],
+    "shortDescription": "Labels, cable flags and thermal image printing",
+    "category": "Utility",
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser"
+      },
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      }
+    },
+    "resources": {
+      "THIRD-PARTY-NOTICES.txt": "THIRD-PARTY-NOTICES.txt",
+      "SOURCE-CODE.txt": "SOURCE-CODE.txt",
+      "../LICENSE": "LICENSE.txt"
+    }
+  }
+}

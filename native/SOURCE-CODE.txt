@@ -1,0 +1,23 @@
+Thermy9 is free software under the GNU General Public License version 3 only.
+Copyright (C) 2026 Thermy9 contributors.
+You may use, study, modify and redistribute it under that license. It comes
+WITHOUT ANY WARRANTY; see LICENSE.txt for the full terms.
+
+Corresponding source for version 1.0.1 is provided in
+Thermy9-1.0.1-source.zip, supplied alongside the Windows installer.
+It includes the application source, assets, build scripts, locked dependencies
+and vendored Rust dependency sources. See README.md and docs/installing.md
+inside the archive for build instructions.
+
+Distributors must provide that matching source archive alongside the installer
+(or equivalent access satisfying GPLv3 section 6), not just a link to a changing
+repository branch. This local release has not yet been published to a public URL.
+
+Third-party components retain the licenses and copyright notices listed in
+THIRD-PARTY-NOTICES.txt. MPL-2.0 sources remain available under MPL-2.0 and are
+additionally distributed under GPLv3 as part of this Larger Work, per MPL 3.3.
+The Microsoft WebView2 platform runtime is separately licensed by Microsoft;
+it is obtained from Microsoft when required, not licensed as Thermy9 code.
+
+Thermy9 is an independent, unofficial project. It is not affiliated with or
+endorsed by Paperang or the other manufacturers named for compatibility.

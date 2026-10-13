@@ -1,0 +1,19 @@
+Thermy9 — an unofficial label studio for compatible Paperang printers
+Copyright (C) 2026 Thermy9 contributors
+
+Thermy9's original code, original icon catalogue and documentation are licensed
+under GPL-3.0-only. The complete license is in LICENSE.
+Third-party code and fonts retain their own licenses; this declaration does not
+relicense them. native/THIRD-PARTY-NOTICES.txt contains their notices.
+native/licenses/provenance.json records the sources of supplemental license texts.
+
+The Paperang protocol implementation was developed with reference to MIT-licensed
+Paperang projects. Their copyright and permission notices are retained in
+src/vendor/PAPERANG-LICENSE and src/vendor/PAPERANG-SERIAL-LICENSE.
+The six bundled DejaVu font files are unmodified; native/fonts/LICENSE.txt applies.
+Its separate debian/* GPL notice describes Debian packaging files, not the fonts;
+those packaging files are not included in Thermy9.
+
+This project is not affiliated with or endorsed by Paperang, NVIDIA, or other
+manufacturers named in compatibility descriptions or the original icon catalogue.
+Product names identify hardware; the icons are simplified original drawings.

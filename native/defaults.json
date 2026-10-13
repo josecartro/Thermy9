@@ -1,0 +1,50 @@
+{
+  "Machine label": {
+    "kind": "paragraph",
+    "settings": {
+      "leading_mm": 0,
+      "trailing_mm": 14,
+      "padding_mm": 2.5,
+      "stroke": 2,
+      "radius_mm": 1.5,
+      "bold": true,
+      "border": true,
+      "font_family": "sans",
+      "align": "center",
+      "font_size": 64,
+      "label_length_mm": 30,
+      "layout": "label"
+    }
+  },
+  "Cable flags": {
+    "kind": "cable",
+    "settings": {
+      "leading_mm": 0,
+      "trailing_mm": 14,
+      "padding_mm": 2.5,
+      "stroke": 2,
+      "radius_mm": 1.5,
+      "bold": true,
+      "border": true,
+      "font_family": "sans",
+      "align": "center",
+      "font_size": 32,
+      "width_mm": 44,
+      "row_mm": 10,
+      "gap_mm": 2,
+      "fold_mm": 4,
+      "mirror": true,
+      "columns": "2",
+      "field_gap_mm": 1,
+      "first_field_percent": 40,
+      "left_swap": false,
+      "right_swap": false,
+      "left_align": "left",
+      "left_extra_align": "left",
+      "right_align": "right",
+      "right_extra_align": "right",
+      "fold_mark": false,
+      "border_mode": "Whole row"
+    }
+  }
+}

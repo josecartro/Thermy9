@@ -1,0 +1,1 @@
+{"private":true,"scripts":{"build:native":"cd native && tauri build","bundle:native":"cd native && tauri bundle --target x86_64-pc-windows-msvc --bundles nsis --ci","tauri":"tauri"},"devDependencies":{"@tauri-apps/cli":"^2"}}

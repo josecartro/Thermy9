@@ -1,0 +1,11 @@
+*
+!docker/
+!docker/**
+!web/
+!web/icons.json
+!upstream/
+upstream/*
+!upstream/paperang-cli/
+upstream/paperang-cli/.git
+upstream/paperang-cli/.venv
+upstream/paperang-cli/**/__pycache__

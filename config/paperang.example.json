@@ -1,0 +1,5 @@
+{
+  "model": "paperang_p2",
+  "transport": "ble",
+  "macaddress": "AA:BB:CC:DD:EE:FF"
+}

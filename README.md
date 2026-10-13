@@ -20,5 +20,5 @@ Once installed:
 
 [Setup and building](docs/installing.md) · [Release checks](docs/release-checks.md)
 
-Unofficial project, not affiliated with Paperang. [GPLv3](LICENSE).
+Licensed under [GPLv3](LICENSE). Not affiliated with Paperang.
 [Third-party notices](NOTICE).

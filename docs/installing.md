@@ -1,75 +1,50 @@
-# Installing Thermy9
+# Setup and building
 
-Copy `dist/Thermy9_1.0.1_x64-setup.exe` to a Windows 10/11 x64 computer and run it.
-It installs for the signed-in user without requesting administrator privileges.
-Open Thermy9 from Start. Bluetooth hardware is required for printing. If WebView2
-is absent, installation needs internet access to download Microsoft's runtime.
-Once installed, editing, previewing and printing work offline.
+## Install
 
-There is no Python environment, Docker engine, Rust compiler, NumPy DLL, separate
-web server, printer driver or project checkout to install on the target computer.
-Fonts, the editor and all 80 icons are included in the executable. Dependency
-licenses are installed in `THIRD-PARTY-NOTICES.txt`.
-Thermy9 is GPL-3.0-only, without warranty. `LICENSE.txt` and `SOURCE-CODE.txt`
-are also installed. When redistributing the installer, provide its matching
-`Thermy9-1.0.1-source.zip` alongside it (or equivalent GPL-compliant source access).
+Run `Thermy9_1.0.1_x64-setup.exe`, then open **Thermy9** from Start.
+The installer is currently a local build output, not a public download.
 
-## Printer and presets
+Requires Windows 10/11 x64 and Bluetooth. Installation may need internet to
+install Microsoft WebView2; afterward the app works offline. No Python, Docker
+or Rust installation is needed to use the app.
 
-Turn on the printer and Bluetooth, open Printer settings, choose Find printer,
-select the Paperang and Check status. Close other apps connected to that printer.
-The implemented protocol is the one previously validated with this PAPERANG P2S;
-other printers/models are not automatically compatible.
+Turn on the printer, then choose **Printer settings → Find printer**.
+Close other apps connected to it. The supported model is PAPERANG P2S.
 
-Use Save preset → Export presets to Downloads on the old computer. Transfer that
-JSON file and select it under Import presets on the new one. Import merges new
-names and refuses collisions, so existing layouts cannot be silently replaced.
-The printer address is configured independently on each computer.
+The installer is unsigned. If Windows blocks it, keep security enabled and use
+your normal software approval process.
 
-Settings live in `%APPDATA%\com.thermy9.studio`. Back up `my-presets.json` to keep
-personal layouts; `printer.json` stores the Bluetooth address. Current text and
-image selections are session content and are not included in layout presets.
-The installer does not contain the developer's address, presets or label text.
+## Move your presets
 
-## Windows security
+Use **Save preset → Export presets to Downloads**, then **Import presets** on
+the other PC. Presets save layouts, not label text or images. Set up the printer
+separately on each PC.
 
-This build is unsigned. The native executable ran on the development PC with its
-Windows security policy unchanged. Acceptance on a different PC depends on its
-policy; this is not a guarantee that every Smart App Control or managed policy
-will allow it. If it is blocked, keep security enabled and use your normal software
-approval process. Broad distribution should use an appropriately trusted signing
-certificate; none is configured or fabricated here.
+Settings are stored in `%APPDATA%\com.thermy9.studio`.
 
-The old NumPy dependency has been removed from the native app. During development,
-Windows also blocked a Rust build helper; the build script therefore compiles in
-a Linux container. The installed app does not run that helper or need Docker.
+## Build from source
 
-## Rebuilding
+Install Docker Desktop (Linux containers), Node.js/npm and Rust/Cargo. From the
+project folder in PowerShell:
 
-`Build Native.ps1` requires Docker Desktop in Linux-container mode, Node.js/npm
-and Rust/Cargo (the Windows packaging CLI uses Cargo metadata). Run it from
-PowerShell. It uses the locked Rust/npm dependencies, tests the renderer, generates
-license notices, cross-compiles with cargo-xwin and packages a per-user NSIS
-installer. Output is in `dist/`. First build downloads the Linux toolchain, crates
-and Microsoft CRT/SDK. Subsequent builds reuse Docker volumes.
-Use `./Build Native.ps1 -CachePrefix thermy9-clean-check` to compile with a fresh
-target cache. This verifies buildability; byte-for-byte reproducibility is not
-promised. The corresponding-source archive includes vendored Rust dependencies
-and `.cargo/config.toml`, so Cargo can also use those sources without crates.io.
-Build tools and Microsoft SDK downloads still require network access initially.
+```powershell
+.\Build Native.ps1
+```
 
-`npm run build:native` is the direct Windows alternative, requiring the MSVC C++
-Build Tools and a policy that allows Cargo's build helpers. Regenerate notices
-when dependencies change. Versions are in `native/Cargo.toml`,
-`native/tauri.conf.json` and their lockfiles.
+The script tests the renderer, generates license notices and builds the Windows
+installer into `dist/`. The first build needs internet to download build tools
+and dependencies. Docker is only needed for building.
 
-`dist/thermy9.exe --render-check input.json output-prefix` validates rendering
-without opening a window or printing. `--status-check ADDRESS output.json` only
-queries the printer. The renderer's PNG and packed print raster describe exactly
-the same monochrome pixels. Font layout and image dithering may differ slightly
-from the retained Python version; review a preview and one physical sample before
-a large batch.
+For a direct Windows build, install MSVC C++ Build Tools, then run:
 
-Uninstall through Windows Installed apps. Keep a preset export before uninstalling
-or moving computers. The original app remains available through
-`Start Thermy9 Legacy.cmd` with its original Python/Docker setup.
+```powershell
+npm ci
+npm run build:native
+```
+
+Regenerate dependency notices if dependencies change. When sharing an installer,
+provide its matching corresponding source and third-party notices; see
+[release checks](release-checks.md).
+
+The older Python/Docker app remains available through `Start Thermy9 Legacy.cmd`.

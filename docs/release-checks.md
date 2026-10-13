@@ -1,6 +1,6 @@
 # Release checks — 1.0.1
 
-This is a local release candidate. Nothing has been uploaded or published.
+Source is public. The Windows installer remains a local release candidate pending a fresh-PC test.
 
 ## License review
 

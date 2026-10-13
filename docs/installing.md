@@ -3,7 +3,7 @@
 ## Install
 
 Run `Thermy9_1.0.1_x64-setup.exe`, then open **Thermy9** from Start.
-The installer is currently a local build output, not a public download.
+Download it from the [1.0.1 preview release](https://github.com/josecartro/Thermy9/releases/tag/v1.0.1). Testing on another PC is still pending.
 
 Requires Windows 10/11 x64 and Bluetooth. Installation may need internet to
 install Microsoft WebView2; afterward the app works offline. No Python, Docker

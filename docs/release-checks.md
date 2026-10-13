@@ -1,6 +1,6 @@
 # Release checks — 1.0.1
 
-Source is public. The Windows installer remains a local release candidate pending a fresh-PC test.
+Source and the unsigned Windows installer are available in the [1.0.1 preview release](https://github.com/josecartro/Thermy9/releases/tag/v1.0.1). The fresh-PC test remains pending.
 
 ## License review
 
